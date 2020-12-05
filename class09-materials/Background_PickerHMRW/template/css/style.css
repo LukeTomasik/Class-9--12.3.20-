@@ -1,0 +1,135 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* Main
+/*******************************************/
+main {
+  background: rgb(255,255,255);
+  background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgb(255, 77, 0) 76%);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main > section {
+  display: flex;
+  /* border: 1px solid cyan; */
+  width: 50%;
+  height: 700px;
+}
+.section_container {
+  /* border: 1px solid red; */
+  margin: 20px auto;
+  height: auto;
+  width: 800px;
+  /* margin: 0 auto; */
+}
+.section_container > h2 {
+  text-align: center;
+  font-size:3rem;
+}
+.section_container section {
+  /* border: 1px solid blue; */
+  height: 200px;
+  width: 100%;
+  display: flex;
+}
+.section_container div {
+  width: 25%;
+  height: auto;
+  border: 4px solid black;
+  margin: 20px;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+}
+.section_container div > h2 {
+align-self: center;
+}
+.section_container div a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+#test_container {
+  /* background: rgb(38, 243, 250); */
+  border-radius: 50%;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+  border: 3px solid grey;
+}
+
+/******************************************
+/* ADDITIONAL STYLES - colors!!!
+/*******************************************/
+
+/******************************************
+/* Top row
+/*******************************************/
+
+#top_one {
+  background: #264653;
+}
+#top_two {
+  background: #2A9D8F;
+}
+#top_three {
+  background: rgba(233, 196, 106,1);
+}
+#top_four {
+  background: #F4A261;
+}
+
+/******************************************
+/* Middle row
+/*******************************************/
+
+#mid_one {
+  background: #FCB5B5;
+}
+#mid_two {
+  background: #824670;
+}
+#mid_three {
+  background: #D5A021;
+}
+#mid_four {
+  background: #349AD5;
+}
+
+/******************************************
+/* Bottom row
+/*******************************************/
+
+#bot_one {
+  background: #04F06A;
+}
+#bot_two {
+  background: #ff2edc;
+}
+#bot_three {
+  background: #ff2323;
+}
+#bot_four {
+  background: #4B36AB;
+  
+}
+
+
+
+
+
+
+
+
+
