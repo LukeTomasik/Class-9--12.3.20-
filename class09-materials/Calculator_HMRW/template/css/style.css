@@ -1,0 +1,93 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/*
+cool color scheme
+
+platinum - #E6E8E6
+yellow 'sunglow' - #FDCA40
+red ' rose madder' - #df2935
+blue blue crayola -  #3772FF
+black 'rich black fogra -  #080708
+
+
+
+*/
+
+
+
+
+/******************************************
+/* Main 
+/*******************************************/
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 100vh;
+}
+
+section {
+  border: 2px solid red;
+  height: 70vh;
+  width: 35%;
+}
+
+section > div {
+  border: 1px solid blue;
+  width: auto;
+}
+.top_sectionContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  height: 25%;
+}
+.top_sectionContainer > div {
+  display: flex;
+  border: 1px solid purple;
+  border-radius: 10px;
+  width: auto;
+}
+.top_sectionContainer h2{
+  align-self: center;
+  font-size: 4rem;
+}
+.bottom_sectionContainer > div {
+  border: 1px solid purple;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+.bottom_sectionContainer {
+  padding: 15px;
+  height: 75%;
+}
+.bottom_sectionContainer > div {
+  padding: 20px;
+}
+.bottom_buttonContainer {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  flex-wrap: wrap;
+}
+.bottom_buttonContainer button {
+  border-radius: 50%;
+  height: 20%;
+  width: 25%;
+}
+button.double {
+  width: 50%;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

@@ -50,7 +50,7 @@ function changeTopFour () {
 
 // create an array for DOM
 
-let midOne = document.getElementById('mid_one')
+let midOne = document.getElementById(`mid_one`)
 let midTwo = document.getElementById('mid_two')
 let midThree = document.getElementById('mid_three')
 let midFour = document.getElementById('mid_four')
