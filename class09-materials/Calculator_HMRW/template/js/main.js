@@ -14,50 +14,11 @@ HOW A CALCULATOR FUNCTIONS LOGIC*********
     -- click on equals to get answer
         taking the stored value + arithmetic logic + new result value which will then display the result
 
--Create section for DOM - buttons
-    - convert a string to a number
--create functions for +,-,*,/,
--create function to hold value
--create function to clear value
-
 */
-
-// loads functions on window load
-
-window.onload = init
-
-function init () {
-    
-    console.log('Lets do some math!')
-}
 
 // create a section for DOM buttons
 
 const btnContainer = document.querySelector('.bottom_buttonContainer')
-
-//     let result = document.getElementById('result')
-//     let ac = document.getElementById('clear')
-//     let negative = document.getElementById('negative')
-//     let percent = document.getElementById('percent')
-//     let divide = document.getElementById('divide')
-//     let seven = document.getElementById('seven')
-//     let eight = document.getElementById('eight')
-//     let nine = document.getElementById('nine')
-//     let multiply = document.getElementById('multiply')
-//     let four = document.getElementById('four')
-//     let five = document.getElementById('five')
-//     let six = document.getElementById('six')
-//     let minus = document.getElementById('minus')
-//     let one = document.getElementById('one')
-//     let two = document.getElementById('two')
-//     let three = document.getElementById('three')
-//     let plus = document.getElementById('plus')
-//     let zero = document.getElementById('zero')
-//     let dot = document.getElementById('dot')
-
-
-// let calculatorNumbers = [seven,eight,nine,four,five,six,one,two,three,zero]
-
 
 let displayResult= [];
 let enteredValues = []
