@@ -28,55 +28,71 @@ window.onload = init
 
 function init () {
     // add functions for calculator to work
-    addEventListener()
+    // addEventListener()
     // storeId()
     console.log('Lets do some math!')
 }
 
 // create a section for DOM buttons
 
-    let result = document.getElementById('result')
-    let ac = document.getElementById('clear')
-    let negative = document.getElementById('negative')
-    let percent = document.getElementById('percent')
-    let divide = document.getElementById('divide')
-    let seven = document.getElementById('seven')
-    let eight = document.getElementById('eight')
-    let nine = document.getElementById('nine')
-    let multiply = document.getElementById('multiply')
-    let four = document.getElementById('four')
-    let five = document.getElementById('five')
-    let six = document.getElementById('six')
-    let minus = document.getElementById('minus')
-    let one = document.getElementById('one')
-    let two = document.getElementById('two')
-    let three = document.getElementById('three')
-    let plus = document.getElementById('plus')
-    let zero = document.getElementById('zero')
-    let dot = document.getElementById('dot')
+const btnContainer = document.querySelector('.bottom_buttonContainer')
+
+//     let result = document.getElementById('result')
+//     let ac = document.getElementById('clear')
+//     let negative = document.getElementById('negative')
+//     let percent = document.getElementById('percent')
+//     let divide = document.getElementById('divide')
+//     let seven = document.getElementById('seven')
+//     let eight = document.getElementById('eight')
+//     let nine = document.getElementById('nine')
+//     let multiply = document.getElementById('multiply')
+//     let four = document.getElementById('four')
+//     let five = document.getElementById('five')
+//     let six = document.getElementById('six')
+//     let minus = document.getElementById('minus')
+//     let one = document.getElementById('one')
+//     let two = document.getElementById('two')
+//     let three = document.getElementById('three')
+//     let plus = document.getElementById('plus')
+//     let zero = document.getElementById('zero')
+//     let dot = document.getElementById('dot')
 
 
-let calculatorNumbers = [seven,eight,nine,four,five,six,one,two,three,zero]
+// let calculatorNumbers = [seven,eight,nine,four,five,six,one,two,three,zero]
+
+let displayResult= "";
+let enteredValues = []
+
 
 // add event listeners to numbers
 
-let id=0;
-console.dir(calculatorNumbers)
 
-function grabId () {
-    let id =parseInt(this.innerHTML)
+// console.dir(calculatorNumbers)
+
+function grabId (button) {
+    let id = button.innerHTML
+    displayResult += id
+    console.log(enteredValues)
+    id = +id
     console.log(id)
     //pass a function that displays the number in container
-    valueHolder(id)
-    return id
+    // valueHolder(displayResult)
 }
+let noString;
+btnContainer.addEventListener("click",(event) => {
+    if (event.target.tagName === "BUTTON") {
+        if (isFinite(+event.target.innerHTML)) {
+            grabId(event.target)
+        } else {
+            enteredValues.push(+displayResult)
+            enteredValues.push(event.target.innerHTML)
+            noString = enteredValues.map(user => `" ${user} "`)
 
-
-
-for (let i = 0; i < calculatorNumbers.length;i++) {
-         calculatorNumbers[i].addEventListener('click', grabId)
-}
-
+            displayResult= ""
+        }
+        valueHolder(displayResult)  
+    }
+   })
 
 // function storeId () {
 //     let storeId;
@@ -89,11 +105,13 @@ for (let i = 0; i < calculatorNumbers.length;i++) {
 // }
 // console.log(storeId())
 
-function addEventListener () {
-    for (let i= 0; i < calculatorNumbers.length; i++) {
-        calculatorNumbers[i].addEventListener('click', valueHolder())
-    }
-}
+// function addEventListener () {
+//     for (let i= 0; i < calculatorNumbers.length; i++) {
+//         calculatorNumbers[i].addEventListener('click', valueHolder())
+//     }
+// }
+
+
 // console.dir(nine)
 // add even listeners to operations
 
@@ -101,13 +119,13 @@ function addEventListener () {
 //create function to hold values
 
 function valueHolder (x) {
-    result.innerHTML = " "
+    result.innerHTML = +x
     // if ( x !== undefined ) {
     //     result.innerHTML = x
     // } 
     
 }   
-
+// console.log(valueHolder())
 // works** valueHolder(calculatorDom.seven)
 
 
