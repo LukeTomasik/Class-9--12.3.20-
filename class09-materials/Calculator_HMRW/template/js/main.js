@@ -27,9 +27,7 @@ HOW A CALCULATOR FUNCTIONS LOGIC*********
 window.onload = init
 
 function init () {
-    // add functions for calculator to work
-    // addEventListener()
-    // storeId()
+    
     console.log('Lets do some math!')
 }
 
@@ -60,72 +58,133 @@ const btnContainer = document.querySelector('.bottom_buttonContainer')
 
 // let calculatorNumbers = [seven,eight,nine,four,five,six,one,two,three,zero]
 
-let displayResult= "";
+
+let displayResult= [];
 let enteredValues = []
-
-
-// add event listeners to numbers
-
-
-// console.dir(calculatorNumbers)
+let noString = []
+let results = []
 
 function grabId (button) {
     let id = button.innerHTML
-    displayResult += id
-    console.log(enteredValues)
-    id = +id
-    console.log(id)
-    //pass a function that displays the number in container
-    // valueHolder(displayResult)
+        displayResult += id 
 }
-let noString;
+
 btnContainer.addEventListener("click",(event) => {
+    if ((event.target.id === "equals")) {
+            compute()
+            return
+    }
+
     if (event.target.tagName === "BUTTON") {
         if (isFinite(+event.target.innerHTML)) {
             grabId(event.target)
         } else {
-            enteredValues.push(+displayResult)
-            enteredValues.push(event.target.innerHTML)
-            noString = enteredValues.map(user => `" ${user} "`)
-
-            displayResult= ""
+            if (event.target.id === "multiply") {
+                multiply()
+                return
+            } else if (event.target.id === "divide") {
+                division ()
+                return
+            } else if (event.target.id === "minus") {
+                subtraction ()
+                return
+            }else if (event.target.id === "plus") {
+                addition ()
+                return
+            } else if (event.target.id === "clear") {
+                clear ()
+                return
+            } else if (event.target.id === "negative") {
+                negative ()
+                return
+            } else if (event.target.id === "decimal") {
+                decimal ()
+                return
+            } else if (event.target.id === "percent") {
+                percent ()
+                return
+            }  else {
+                console.log('you don Fucked up A-aaron')
+            }
+       
         }
         valueHolder(displayResult)  
     }
    })
 
-// function storeId () {
-//     let storeId;
-//     for (let i = 0; i < calculatorNumbers.length;i++) {
-//         console.log(this.id)
-//         storeId = calculatorNumbers[i].id
-//     }
-
-//     return storeId
-// }
-// console.log(storeId())
-
-// function addEventListener () {
-//     for (let i= 0; i < calculatorNumbers.length; i++) {
-//         calculatorNumbers[i].addEventListener('click', valueHolder())
-//     }
-// }
-
-
-// console.dir(nine)
-// add even listeners to operations
-
-
-//create function to hold values
-
 function valueHolder (x) {
-    result.innerHTML = +x
-    // if ( x !== undefined ) {
-    //     result.innerHTML = x
-    // } 
-    
-}   
-// console.log(valueHolder())
-// works** valueHolder(calculatorDom.seven)
+       result.innerHTML = x 
+   }
 
+function logicHolder (x) {
+    logicResult.innerHTML = x 
+}
 
+function compute () {
+    enteredValues.push(+displayResult)
+    noString = enteredValues.join('')
+    results = eval(noString)
+    logicHolder(noString)
+    valueHolder(results)
+}
+
+function clear () {
+    noString = []
+    displayResult = []
+    enteredValues = []
+    valueHolder(displayResult)
+    logicHolder(displayResult)
+}
+
+function multiply () {
+    enteredValues.push(+displayResult)
+    enteredValues.push('*')
+    noString = enteredValues.join('')
+    logicHolder(noString)
+    displayResult= " "
+    valueHolder(displayResult)
+}
+
+function division () {
+    enteredValues.push(+displayResult)
+    enteredValues.push('/')
+    noString = enteredValues.join('')
+    logicHolder(noString)
+    displayResult= " "
+    valueHolder(displayResult)
+}
+
+function subtraction () {
+    enteredValues.push(+displayResult)
+    enteredValues.push('-')
+    noString = enteredValues.join('')
+    logicHolder(noString)
+    displayResult= " "
+    valueHolder(displayResult)
+}
+
+function addition () {
+    enteredValues.push(+displayResult)
+    enteredValues.push('+')
+    noString = enteredValues.join('')
+    logicHolder(noString)
+    displayResult= " "
+    valueHolder(displayResult)
+}
+
+function negative () {
+    console.log('test')
+        enteredValues.unshift("-")
+        valueHolder(- + displayResult)  
+} 
+
+function decimal () {
+    let updatedDisplay = displayResult + "."
+    displayResult = updatedDisplay
+    valueHolder(updatedDisplay)
+}
+
+function percent () {
+    let updatedDisplay = displayResult * 100
+    console.log(updatedDisplay)
+}
