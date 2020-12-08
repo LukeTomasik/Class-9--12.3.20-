@@ -65,7 +65,7 @@ btnContainer.addEventListener("click",(event) => {
                 percent ()
                 return
             }  else {
-                console.log('you don Fucked up A-aaron')
+               
             }
        
         }

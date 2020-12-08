@@ -114,15 +114,3 @@ for (let i = 0; i< midArr.length; i++) {
     midArr[i].addEventListener('click', arrLoop)
 }
 
-// adds event listeners
-
-// midOne.addEventListener('click',arrLoop)
-// midTwo.addEventListener('click',arrLoop)
-// midThree.addEventListener('click',arrLoop)
-// midFour.addEventListener('click',arrLoop)
-
-// botOne.addEventListener('click',arrLoop)
-// botTwo.addEventListener('click',arrLoop)
-// botThree.addEventListener('click',arrLoop)
-// botFour.addEventListener('click',arrLoop)
-
